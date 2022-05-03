@@ -10,6 +10,8 @@ import NotFound from './pages/Page404';
 import Register from './pages/Register';
 import Products from './pages/Products';
 import DashboardApp from './pages/DashboardApp';
+import GuestLayout from './layouts/GuestLayout';
+import HomeApp from './pages/HomeApp';
 
 // ----------------------------------------------------------------------
 
@@ -27,9 +29,16 @@ export default function Router() {
     },
     {
       path: '/',
+      element: <GuestLayout />,
+      children: [
+        { path: '/', element: <HomeApp /> },
+      ],
+    },
+    {
+      path: '/',
       element: <LogoOnlyLayout />,
       children: [
-        { path: '/', element: <Navigate to="/dashboard/app" /> },
+        { path: '/', element: <Navigate to="/" /> },
         { path: 'login', element: <Login /> },
         { path: 'register', element: <Register /> },
         { path: '404', element: <NotFound /> },
