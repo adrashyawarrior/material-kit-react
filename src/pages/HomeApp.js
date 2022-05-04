@@ -1,6 +1,6 @@
 import { useState } from 'react';
 // material
-import { Container, Stack, Typography } from '@mui/material';
+import { Container, Stack } from '@mui/material';
 // components
 import Page from '../components/Page';
 import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } from '../sections/@dashboard/products';

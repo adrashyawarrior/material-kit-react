@@ -1,26 +1,19 @@
 import http from "./baseURL";
 
-const getAll = () => {
-    return http.get("/users");
-};
-const get = id => {
-    return http.get(`/users/${id}`);
-};
-const create = data => {
-    return http.post("/users", data);
-};
-const update = (id, data) => {
-    return http.put(`/users/${id}`, data);
-};
-const remove = id => {
-    return http.delete(`/users/${id}`);
-};
-const removeAll = () => {
-    return http.delete(`/users`);
-};
-const findByName = name => {
-    return http.get(`/users?name=${name}`);
-};
+const getAll = () => http.get("/users");
+
+const get = id => http.get(`/users/${id}`);
+
+const create = data => http.post("/users", data);
+
+const update = (id, data) => http.put(`/users/${id}`, data);
+
+const remove = id => http.delete(`/users/${id}`);
+
+const removeAll = () => http.delete(`/users`);
+
+const findByName = name => http.get(`/users?name=${name}`);
+
 const UserService = {
     getAll,
     get,
